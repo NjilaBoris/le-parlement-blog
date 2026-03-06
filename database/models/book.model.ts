@@ -12,11 +12,15 @@ const BookSchema = new Schema<IBook>(
       lowercase: true,
       trim: true,
     },
-    contentField: { type: String, required: true },
     author: { type: String, required: true },
+    persona: { type: String, optional: true },
+    fileURL: { type: String, required: true },
+    fileBlobKey: { type: String, optional: true },
     coverURL: { type: String },
-
-    fileSize: { type: Number, required: true },
+    coverBlobKey: { type: String, optional: true },
+    fileSize: { type: Number, optional: true },
+    totalSegments: { type: Number, optional: true },
+    contentField: { type: String, required: true },
   },
   { timestamps: true }
 );

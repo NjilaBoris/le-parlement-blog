@@ -77,7 +77,7 @@ const UploadForm = () => {
       }
 
       const fileTitle = data.title.replace(/\s+/g, "-").toLowerCase();
-      const pdfFile = data.pdfFile;
+      // const pdfFile = data.pdfFile;
 
       const parsedPDF = await parsePDFFile(pdfFile);
 
@@ -126,10 +126,7 @@ const UploadForm = () => {
         contentField: data.contentField,
         author: data.author,
         category: data.category,
-        fileURL: uploadedPdfBlob.url,
-        fileBlobKey: uploadedPdfBlob.pathname,
         coverURL: coverUrl,
-        fileSize: pdfFile.size,
       });
 
       if (!book.success) {
